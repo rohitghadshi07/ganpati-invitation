@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 620" width="100%" height="100%">
+  <defs>
+    <!-- Ambient Teal/Emerald Glow -->
+    <radialGradient id="ocellusGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ffcc" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#008066" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#003322" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Outer Emerald Rim -->
+    <linearGradient id="emeraldRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e676"/>
+      <stop offset="30%" stop-color="#00c853"/>
+      <stop offset="70%" stop-color="#00897b"/>
+      <stop offset="100%" stop-color="#004d40"/>
+    </linearGradient>
+
+    <!-- Chestnut / Bronze / Copper Ring -->
+    <radialGradient id="bronzeRing" cx="45%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#d49a6a"/>
+      <stop offset="45%" stop-color="#8d4925"/>
+      <stop offset="85%" stop-color="#54260f"/>
+      <stop offset="100%" stop-color="#2e1305"/>
+    </radialGradient>
+
+    <!-- Radiant Turquoise / Cyan Iris -->
+    <radialGradient id="cyanIris" cx="50%" cy="55%" r="50%">
+      <stop offset="0%" stop-color="#80f3ff"/>
+      <stop offset="40%" stop-color="#00bcd4"/>
+      <stop offset="80%" stop-color="#00838f"/>
+      <stop offset="100%" stop-color="#004d66"/>
+    </radialGradient>
+
+    <!-- Midnight Royal Navy / Sapphire Double Pupil -->
+    <linearGradient id="navyPupil" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#0d47a1"/>
+      <stop offset="45%" stop-color="#051759"/>
+      <stop offset="85%" stop-color="#020826"/>
+      <stop offset="100%" stop-color="#00020f"/>
+    </linearGradient>
+
+    <!-- Stem (Quill) -->
+    <linearGradient id="quillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b2dfdb"/>
+      <stop offset="35%" stop-color="#4db6ac"/>
+      <stop offset="70%" stop-color="#00897b"/>
+      <stop offset="100%" stop-color="#004d40"/>
+    </linearGradient>
+
+    <!-- Golden Vane Strands -->
+    <linearGradient id="goldBarb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe082" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#c59b27" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#556b2f" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Emerald Vane Strands -->
+    <linearGradient id="greenBarb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e676" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#00897b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#004d40" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Purple/Mauve Highlights -->
+    <linearGradient id="mauveBarb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ce93d8" stop-opacity="0.75"/>
+      <stop offset="50%" stop-color="#8e24aa" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#4a148c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ambient Glow Behind Ocellus -->
+  <circle cx="160" cy="180" r="140" fill="url(#ocellusGlow)"/>
+
+  <!-- Upper Wispy Crown Strands (Flowing upward into fine filaments) -->
+  <g fill="none" stroke-linecap="round">
+    <!-- Golden Top Whiskers -->
+    <g stroke="url(#goldBarb)" stroke-width="1.2">
+      <path d="M 160,110 C 145,70 120,40 85,15"/>
+      <path d="M 160,105 C 150,60 130,30 100,8"/>
+      <path d="M 160,100 C 155,50 145,25 125,5"/>
+      <path d="M 160,95 C 160,45 158,20 150,2"/>
+      <path d="M 160,95 C 165,45 175,20 185,4"/>
+      <path d="M 160,100 C 170,50 190,25 210,8"/>
+      <path d="M 160,105 C 175,60 205,30 235,15"/>
+      <path d="M 160,110 C 180,70 220,40 260,25"/>
+    </g>
+    <!-- Emerald and Mauve Accents -->
+    <g stroke="url(#greenBarb)" stroke-width="0.9">
+      <path d="M 155,115 C 130,75 105,45 70,25"/>
+      <path d="M 150,120 C 120,80 90,50 55,35"/>
+      <path d="M 165,115 C 190,75 220,45 255,28"/>
+      <path d="M 170,120 C 200,80 235,50 270,40"/>
+    </g>
+    <g stroke="url(#mauveBarb)" stroke-width="0.8">
+      <path d="M 158,110 C 138,65 110,35 78,18"/>
+      <path d="M 162,110 C 182,65 212,35 248,18"/>
+    </g>
+  </g>
+
+  <!-- Side Vane Strands (Dense feather body) -->
+  <g fill="none" stroke-linecap="round">
+    <!-- Left side emerald & gold layered barbs -->
+    <g stroke="url(#greenBarb)" stroke-width="1.4">
+      <path d="M 162,250 C 100,230 45,190 25,130"/>
+      <path d="M 165,280 C 105,265 50,225 30,170"/>
+      <path d="M 170,320 C 110,310 55,270 35,210"/>
+      <path d="M 175,360 C 115,355 60,320 40,260"/>
+      <path d="M 180,400 C 120,400 70,370 50,310"/>
+      <path d="M 185,440 C 130,445 80,420 60,370"/>
+      <path d="M 190,480 C 140,490 95,470 75,420"/>
+      <path d="M 193,510 C 150,525 115,510 95,465"/>
+    </g>
+    <g stroke="url(#goldBarb)" stroke-width="1.2">
+      <path d="M 163,260 C 110,240 60,200 40,145"/>
+      <path d="M 168,300 C 115,285 65,245 45,185"/>
+      <path d="M 173,340 C 120,330 70,290 50,235"/>
+      <path d="M 178,380 C 125,375 75,340 55,280"/>
+      <path d="M 183,420 C 130,420 85,390 65,335"/>
+      <path d="M 188,460 C 140,465 95,440 75,390"/>
+    </g>
+
+    <!-- Right side emerald & gold layered barbs -->
+    <g stroke="url(#greenBarb)" stroke-width="1.4">
+      <path d="M 162,250 C 225,230 280,190 300,130"/>
+      <path d="M 165,280 C 230,265 285,225 305,170"/>
+      <path d="M 170,320 C 235,310 290,270 310,210"/>
+      <path d="M 175,360 C 240,355 295,320 315,260"/>
+      <path d="M 180,400 C 245,400 295,370 315,310"/>
+      <path d="M 185,440 C 245,445 290,420 305,370"/>
+      <path d="M 190,480 C 240,490 280,470 295,420"/>
+      <path d="M 193,510 C 235,525 265,510 275,465"/>
+    </g>
+    <g stroke="url(#goldBarb)" stroke-width="1.2">
+      <path d="M 163,260 C 215,240 265,200 285,145"/>
+      <path d="M 168,300 C 220,285 270,245 290,185"/>
+      <path d="M 173,340 C 225,330 275,290 295,235"/>
+      <path d="M 178,380 C 230,375 280,340 300,280"/>
+      <path d="M 183,420 C 235,420 280,390 300,335"/>
+      <path d="M 188,460 C 235,465 275,440 290,390"/>
+    </g>
+  </g>
+
+  <!-- Central Quill / Spine (Stem) -->
+  <path d="M 160,80 C 160,180 170,320 185,430 C 195,500 185,555 155,610"
+        fill="none"
+        stroke="url(#quillGrad)"
+        stroke-width="5"
+        stroke-linecap="round"/>
+  <!-- Translucent White Spine Highlight -->
+  <path d="M 159,85 C 159,180 169,320 184,430 C 193,500 183,555 154,605"
+        fill="none"
+        stroke="#ffffff"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        opacity="0.8"/>
+
+  <!-- THE ICONIC OCELLUS (Peacock Eye) -->
+  <g transform="translate(160, 180)">
+    <!-- 1. Outer Electric Emerald Flame/Tip Border -->
+    <path d="M 0,-105 
+             C 55,-70 85,-20 85,35 
+             C 85,85 50,115 0,115 
+             C -50,115 -85,85 -85,35 
+             C -85,-20 -55,-70 0,-105 Z"
+          fill="url(#emeraldRim)"/>
+
+    <!-- 2. Warm Chestnut / Copper Oval -->
+    <path d="M 0,-85 
+             C 45,-55 70,-15 70,30 
+             C 70,72 40,96 0,96 
+             C -40,96 -70,72 -70,30 
+             C -70,-15 -45,-55 0,-85 Z"
+          fill="url(#bronzeRing)"/>
+
+    <!-- 3. Luminous Cyan / Turquoise Iris -->
+    <path d="M 0,-55 
+             C 38,-35 55,-5 55,25 
+             C 55,60 30,78 0,78 
+             C -30,78 -55,60 -55,25 
+             C -55,-5 -38,-35 0,-55 Z"
+          fill="url(#cyanIris)"/>
+
+    <!-- 4. Deep Navy Double-Lobed Kidney Pupil with Electric Highlights -->
+    <path d="M 0,2 
+             C 12,-18 36,-16 40,8 
+             C 42,28 26,48 0,55 
+             C -26,48 -42,28 -40,8 
+             C -36,-16 -12,-18 0,2 Z"
+          fill="url(#navyPupil)"/>
+
+    <!-- Electric Cyan Highlights inside Pupil -->
+    <path d="M -22,12 C -18,2 -5,4 -2,16 C -8,22 -18,20 -22,12 Z" fill="#00e5ff" opacity="0.6"/>
+    <path d="M 22,12 C 18,2 5,4 2,16 C 8,22 18,20 22,12 Z" fill="#00e5ff" opacity="0.6"/>
+
+    <!-- Specular Gloss Points -->
+    <ellipse cx="-12" cy="6" rx="5" ry="3" transform="rotate(-15, -12, 6)" fill="#ffffff" opacity="0.75"/>
+    <circle cx="16" cy="18" r="2.5" fill="#ffffff" opacity="0.5"/>
+  </g>
+
+  <!-- Downy Plume Tufts at Base -->
+  <g stroke="url(#quillGrad)" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.85">
+    <path d="M 188,510 C 165,525 145,545 140,570"/>
+    <path d="M 188,520 C 170,538 155,560 152,580"/>
+    <path d="M 188,510 C 210,525 230,545 235,570"/>
+    <path d="M 188,520 C 205,538 220,560 222,580"/>
+  </g>
+</svg>

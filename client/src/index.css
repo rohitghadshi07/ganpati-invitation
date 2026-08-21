@@ -395,21 +395,29 @@ img { max-width:100%; height:auto; display:block; }
   animation-iteration-count: infinite;
 }
 
-.falling-feather-item svg {
+.falling-feather-item svg,
+.falling-feather-item img,
+.falling-feather-item .peacock-feather-wrap {
   display: block;
   transform-origin: 50% 20%;
   will-change: transform;
 }
 
-.falling-feather-item.sway-wide svg {
+.falling-feather-item.sway-wide svg,
+.falling-feather-item.sway-wide img,
+.falling-feather-item.sway-wide .peacock-feather-wrap {
   animation: featherSwayWide var(--sway-time, 4.5s) ease-in-out infinite alternate;
 }
 
-.falling-feather-item.sway-gentle svg {
+.falling-feather-item.sway-gentle svg,
+.falling-feather-item.sway-gentle img,
+.falling-feather-item.sway-gentle .peacock-feather-wrap {
   animation: featherSwayGentle var(--sway-time, 3.8s) ease-in-out infinite alternate;
 }
 
-.falling-feather-item.sway-spiral svg {
+.falling-feather-item.sway-spiral svg,
+.falling-feather-item.sway-spiral img,
+.falling-feather-item.sway-spiral .peacock-feather-wrap {
   animation: featherSwaySpiral var(--sway-time, 6s) ease-in-out infinite;
 }
 
