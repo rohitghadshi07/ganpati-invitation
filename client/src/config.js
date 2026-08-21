@@ -38,8 +38,8 @@ export const configData = {
     {
       title: 'गणपती विसर्जन',
       title_en: 'Ganpati Visarjan',
-      date: '25 September 2026',
-      time: 'दुपारी 4:00 वाजता',
+      date: '19 September 2026',
+      time: 'संध्याकाळी 7:00 वाजता',
       icon: 'fa-water',
       desc: 'गणपती बाप्पा मोरया, पुढच्या वर्षी लवकर या!',
     },
