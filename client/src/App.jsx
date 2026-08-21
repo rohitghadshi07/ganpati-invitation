@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import configData from './config';
+import { PeacockFeather } from './components/PeacockFeather';
+import { PeacockFeathersBackground } from './components/PeacockFeathersBackground';
 import './index.css';
 
 function App() {
@@ -129,18 +131,8 @@ function App() {
         </nav>
       </header>
 
-      <div className="petals-container" id="petals">
-         {[...Array(15)].map((_, i) => (
-           <div key={i} className="petal" style={{
-             left: `${Math.random() * 100}%`,
-             animationDuration: `${8 + Math.random() * 12}s, ${3 + Math.random() * 4}s`,
-             animationDelay: `${Math.random() * 10}s`,
-             opacity: 0.3 + Math.random() * 0.5,
-             width: `${10 + Math.random() * 10}px`,
-             height: `${14 + Math.random() * 12}px`
-           }}></div>
-         ))}
-      </div>
+      {/* ── REALISTIC PEACOCK FEATHERS (MOR PANKH) BACKGROUND ── */}
+      <PeacockFeathersBackground count={12} />
 
       <section id="welcome" className="welcome-screen" onClick={() => scrollTo('home')}>
         <div className="welcome-overlay"></div>
@@ -193,6 +185,9 @@ function App() {
             <div className="card-glass reveal">
               <span className="card-corner card-corner-tl">❋</span>
               <span className="card-corner card-corner-tr">❋</span>
+              <div className="invitation-feather-badge">
+                <PeacockFeather size={65} idPrefix="invite-card-feather" />
+              </div>
               <h4 className="mantra">|| श्री गणेशाय नमः ||</h4>
               <p className="invitation-greeting">आपणास सहकुटुंब सप्रेम निमंत्रण</p>
               <h3 className="invitation-heading">You are cordially invited to celebrate<br/>Makhanchor Ganpati with us.</h3>
