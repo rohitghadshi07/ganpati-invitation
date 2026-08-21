@@ -277,6 +277,12 @@ img { max-width:100%; height:auto; display:block; }
 }
 .family-name { color:var(--maroon); font-size:1.15rem; margin-bottom:.3rem; }
 .family-role { color:var(--text-muted); font-size:.85rem; }
+.family-phone { margin:0.4rem 0 0.6rem; font-weight:600; font-size:0.92rem; }
+.family-phone a { color:var(--maroon); transition:color .2s; }
+.family-phone a:hover { color:var(--saffron); }
+.family-desc { font-size:0.85rem; color:var(--text-muted); margin:0.5rem 0 1rem; font-style:italic; }
+.family-actions { display:flex; flex-direction:column; gap:0.5rem; margin-top:0.8rem; }
+.btn-sm { padding:0.45rem 0.9rem; font-size:0.82rem; border-radius:25px; justify-content:center; }
 
 /* ── Makhanchor ── */
 .makhanchor-section { padding:3rem 1rem; background:var(--cream-light); }

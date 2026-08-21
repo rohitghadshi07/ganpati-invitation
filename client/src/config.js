@@ -8,13 +8,31 @@ export const configData = {
     { name: "Rohit Ghadshi", name_mr: "रोहित घाडशी", phone: "+91 9833321453", phoneDigits: "919833321453" },
     { name: "Rahul Ghadshi", name_mr: "राहुल घाडशी", phone: "+91 9833344444", phoneDigits: "919833344444" }
   ],
-  phone: "+91 9833321453 / +91 9833344444",
+  phone: "+91 9833321453",
   phoneDigits: "919833321453",
+  footerHostName: "Rohit Ghadshi",
   venue: "14, Warlikar House, Khotachi Wadi, Girgaon, Mumbai - 400004",
   familyMembers: [
-    { name: 'Rohit Ghadshi', relation: 'Host' },
-    { name: 'Rahul Ghadshi', relation: 'Host' },
-    { name: 'Ghadshi Family', relation: 'Family' },
+    {
+      name: 'Rohit Ghadshi',
+      relation: 'Host',
+      phone: '+91 9833321453',
+      phoneDigits: '919833321453',
+      icon: 'fa-user'
+    },
+    {
+      name: 'Rahul Ghadshi',
+      relation: 'Host',
+      phone: '+91 9833344444',
+      phoneDigits: '919833344444',
+      icon: 'fa-user'
+    },
+    {
+      name: 'Ghadshi Family',
+      relation: 'Family',
+      icon: 'fa-people-roof',
+      desc: 'आपणास सहकुटुंब सप्रेम निमंत्रण'
+    },
   ],
   events: [
     {

@@ -135,7 +135,6 @@ function App() {
             <li><a href="#schedule" onClick={(e) => { e.preventDefault(); scrollTo('schedule'); }}>Schedule</a></li>
             <li><a href="#family" onClick={(e) => { e.preventDefault(); scrollTo('family'); }}>Family</a></li>
             <li><a href="#venue" onClick={(e) => { e.preventDefault(); scrollTo('venue'); }}>Venue</a></li>
-            <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>Contact</a></li>
           </ul>
         </nav>
       </header>
@@ -245,38 +244,41 @@ function App() {
         <section id="family" className="family-section">
           <div className="container">
             <h2 className="section-title reveal">कुटुंबाची ओळख</h2>
-            <p className="section-subtitle reveal">Our Family</p>
+            <p className="section-subtitle reveal">Our Family &amp; Contacts</p>
             <div className="family-grid">
               {config.familyMembers.map((member, i) => (
                 <div key={i} className="family-card reveal">
-                  <div className="family-avatar"><i className="fa-solid fa-user"></i></div>
+                  <div className="family-avatar"><i className={`fa-solid ${member.icon || 'fa-user'}`}></i></div>
                   <h4 className="family-name">{member.name}</h4>
                   <p className="family-role">{member.relation}</p>
+                  {member.phone && (
+                    <p className="family-phone">
+                      <a href={`tel:${member.phoneDigits}`}><i className="fa-solid fa-phone"></i> {member.phone}</a>
+                    </p>
+                  )}
+                  {member.desc && (
+                    <p className="family-desc">{member.desc}</p>
+                  )}
+                  {member.phoneDigits && (
+                    <div className="family-actions">
+                      <a className="btn btn-whatsapp btn-sm" href={`https://wa.me/${member.phoneDigits}?text=${encodeURIComponent('गणपती बाप्पा मोरया! 🙏 I would love to visit for darshan.')}`} target="_blank" rel="noopener noreferrer">
+                        <i className="fa-brands fa-whatsapp"></i> WhatsApp
+                      </a>
+                      <a className="btn btn-primary btn-sm" href={`tel:${member.phoneDigits}`}>
+                        <i className="fa-solid fa-phone"></i> Call {member.name.split(' ')[0]}
+                      </a>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        <div className="section-divider"></div>
-
-    
-      
-        {/* <section id="gallery" className="gallery-section">
-          <div className="container">
-            <h2 className="section-title reveal">बाप्पा दर्शन</h2>
-            <p className="section-subtitle reveal">Photo Gallery</p>
-            <div className="gallery-grid">
-              {[1, 2, 3, 4, 5, 6].map(i => (
-                <figure key={i} className="gallery-item reveal">
-                  <img src={`/assets/images/gallery/placeholder-${i}.jpg`} alt={`Bappa darshan ${i}`} loading="lazy" />
-                  <div className="gallery-overlay"><i className="fa-solid fa-expand"></i></div>
-                </figure>
-              ))}
+            <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+              <button className="btn btn-outline share-btn" onClick={shareInvitation}>
+                <i className="fa-solid fa-share-nodes"></i> Share Invitation
+              </button>
             </div>
           </div>
-        </section> */}
-
+        </section>
 
         <div className="section-divider"></div>
 
@@ -303,37 +305,6 @@ function App() {
             </div>
           </div>
         </section>
-
-        <div className="section-divider"></div>
-
-        <section id="contact" className="contact-section">
-          <div className="container">
-            <h2 className="section-title reveal">संपर्क</h2>
-            <p className="section-subtitle reveal">Get in Touch</p>
-            <div className="contact-grid" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap', maxWidth: '850px', margin: '0 auto' }}>
-              {config.hosts.map((host, idx) => (
-                <div key={idx} className="contact-card reveal" style={{ flex: '1 1 300px', maxWidth: '380px' }}>
-                  <div className="contact-icon"><i className="fa-solid fa-phone-volume"></i></div>
-                  <h3>{host.name}</h3>
-                  <p><a href={`tel:${host.phoneDigits}`}>{host.phone}</a></p>
-                  <div className="contact-actions">
-                    <a className="btn btn-whatsapp" href={`https://wa.me/${host.phoneDigits}?text=${encodeURIComponent('गणपती बाप्पा मोरया! 🙏 I would love to visit for darshan.')}`} target="_blank" rel="noopener noreferrer">
-                      <i className="fa-brands fa-whatsapp"></i> Message on WhatsApp
-                    </a>
-                    <a className="btn btn-primary" href={`tel:${host.phoneDigits}`}>
-                      <i className="fa-solid fa-phone"></i> Call {host.name.split(' ')[0]}
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div style={{ textAlign: 'center', marginTop: '1.8rem' }}>
-              <button className="btn btn-outline share-btn" onClick={shareInvitation}>
-                <i className="fa-solid fa-share-nodes"></i> Share Invitation
-              </button>
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer className="site-footer" id="footer">
@@ -341,15 +312,15 @@ function App() {
           <div className="closing">
             <p className="footer-shloka">|| गणपती बाप्पा मोरया ||</p>
             <h3 className="footer-blessing">🙏 गणपती बाप्पा मोरया!</h3>
-            <p className="footer-host">With love, {config.hostName} &amp; Family</p>
+            <p className="footer-host">With love, {config.footerHostName || 'Rohit Ghadshi'} &amp; Family</p>
           </div>
-          <div className="footer-contact" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap', margin: '1rem 0' }}>
-            {config.hosts.map((host, idx) => (
-              <div key={idx} style={{ textAlign: 'center' }}>
-                <p><a href={`tel:${host.phoneDigits}`}><strong>{host.name}</strong>: {host.phone}</a></p>
-                <p style={{ marginTop: '0.3rem' }}><a className="btn-whatsapp-sm" href={`https://wa.me/${host.phoneDigits}`} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-whatsapp"></i> WhatsApp</a></p>
-              </div>
-            ))}
+          <div className="footer-contact">
+            <p><a href={`tel:${config.phoneDigits}`}>{config.phone}</a></p>
+            <p style={{ marginTop: '0.4rem' }}>
+              <a className="btn-whatsapp-sm" href={`https://wa.me/${config.phoneDigits}`} target="_blank" rel="noopener noreferrer">
+                <i className="fa-brands fa-whatsapp"></i> WhatsApp
+              </a>
+            </p>
           </div>
           <p className="footer-credits">Made with ❤️ &amp; devotion</p>
         </div>
