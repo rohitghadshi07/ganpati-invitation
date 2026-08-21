@@ -4,16 +4,16 @@ import { PeacockFeather } from './PeacockFeather';
 /**
  * Realistic Falling & Floating Peacock Feathers (Mor Pankh) Background
  */
-export const PeacockFeathersBackground = ({ count = 12 }) => {
+export const PeacockFeathersBackground = ({ count = 15 }) => {
   // Generate random properties once per mount
   const feathers = useMemo(() => {
     return Array.from({ length: count }).map((_, i) => {
-      const left = Math.random() * 96; // 0% to 96%
-      const size = 32 + Math.random() * 32; // 32px to 64px width
-      const duration = 12 + Math.random() * 14; // 12s to 26s
+      const left = Math.random() * 95; // 0% to 95%
+      const size = 20 + Math.random() * 16; // 20px to 36px width (sleek and delicate)
+      const duration = 13 + Math.random() * 13; // 13s to 26s graceful float
       const delay = Math.random() * 15; // 0s to 15s
-      const swayDuration = 3 + Math.random() * 3; // 3s to 6s
-      const initialRotation = -25 + Math.random() * 50; // -25deg to +25deg
+      const swayDuration = 3.2 + Math.random() * 2.8; // 3.2s to 6s
+      const initialRotation = -20 + Math.random() * 40; // -20deg to +20deg
       const opacity = 0.55 + Math.random() * 0.4; // 0.55 to 0.95
       const swayType = i % 3 === 0 ? 'sway-wide' : (i % 3 === 1 ? 'sway-gentle' : 'sway-spiral');
 

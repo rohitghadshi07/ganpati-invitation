@@ -421,6 +421,77 @@ img { max-width:100%; height:auto; display:block; }
   animation: featherSwaySpiral var(--sway-time, 6s) ease-in-out infinite;
 }
 
+.falling-feather-item .peacock-feather-wrap {
+  position: relative;
+  overflow: visible;
+}
+
+/* Small, delicate glitter gleam overlay ONLY on full rotating feathers (sway-spiral) */
+.falling-feather-item.sway-spiral .peacock-feather-wrap::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 22%;
+  width: 56%;
+  height: 44%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 223, 77, 0.75) 30%,
+    rgba(255, 193, 7, 0.3) 55%,
+    rgba(212, 175, 55, 0) 75%
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.25);
+  animation: smallGlitterSpiral var(--sway-time, 6s) ease-in-out infinite;
+}
+
+/* Small glitter sparkle star on full rotating feathers */
+.falling-feather-item.sway-spiral .peacock-feather-wrap::before {
+  content: '✦';
+  position: absolute;
+  top: 8%;
+  left: 36%;
+  font-size: 9px;
+  line-height: 1;
+  color: #fffbe6;
+  text-shadow: 0 0 3px #ffd700, 0 0 6px #ffa726;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.2) rotate(0deg);
+  animation: smallStarGlitter var(--sway-time, 6s) ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes smallStarGlitter {
+  0%, 45%, 55%, 95%, 100% {
+    opacity: 0;
+    transform: scale(0.2) rotate(0deg);
+  }
+  22%, 28% {
+    opacity: 0.95;
+    transform: scale(0.85) rotate(35deg);
+  }
+  72%, 78% {
+    opacity: 0.95;
+    transform: scale(0.85) rotate(-35deg);
+  }
+}
+
+@keyframes smallGlitterSpiral {
+  0%, 45%, 55%, 95%, 100% {
+    opacity: 0;
+    transform: scale(0.25);
+  }
+  25%, 75% {
+    opacity: 0.85;
+    transform: scale(0.8);
+  }
+}
+
 @keyframes featherFall {
   0% {
     transform: translateY(-120px) rotateZ(var(--base-rot, 0deg));
@@ -438,33 +509,53 @@ img { max-width:100%; height:auto; display:block; }
   }
 }
 
+/* Wide sway: pure natural swaying motion without glitter */
 @keyframes featherSwayWide {
   0% {
-    transform: translateX(-40px) rotateZ(-22deg) rotateY(18deg);
-  }
-  100% {
-    transform: translateX(40px) rotateZ(22deg) rotateY(-18deg);
-  }
-}
-
-@keyframes featherSwayGentle {
-  0% {
-    transform: translateX(-20px) rotateZ(-12deg) rotateX(15deg);
-  }
-  100% {
-    transform: translateX(20px) rotateZ(12deg) rotateX(-15deg);
-  }
-}
-
-@keyframes featherSwaySpiral {
-  0% {
-    transform: translateX(-30px) rotateZ(-16deg) rotateY(0deg);
+    transform: translateX(-32px) rotateZ(-22deg) rotateY(26deg);
   }
   50% {
-    transform: translateX(30px) rotateZ(16deg) rotateY(180deg);
+    transform: translateX(0px) rotateZ(0deg) rotateY(0deg);
   }
   100% {
-    transform: translateX(-30px) rotateZ(-16deg) rotateY(360deg);
+    transform: translateX(32px) rotateZ(22deg) rotateY(-26deg);
+  }
+}
+
+/* Gentle sway: pure natural gentle sway without glitter */
+@keyframes featherSwayGentle {
+  0% {
+    transform: translateX(-16px) rotateZ(-12deg) rotateX(16deg);
+  }
+  50% {
+    transform: translateX(0px) rotateZ(0deg) rotateX(0deg);
+  }
+  100% {
+    transform: translateX(16px) rotateZ(12deg) rotateX(-16deg);
+  }
+}
+
+/* Spiral sway: full 360-degree rotation with subtle shimmer catching light on edge turns */
+@keyframes featherSwaySpiral {
+  0% {
+    transform: translateX(-24px) rotateZ(-16deg) rotateY(0deg);
+    filter: drop-shadow(0 2px 4px rgba(0, 30, 20, 0.25));
+  }
+  25% {
+    transform: translateX(0px) rotateZ(0deg) rotateY(90deg);
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.7)) brightness(1.15);
+  }
+  50% {
+    transform: translateX(24px) rotateZ(16deg) rotateY(180deg);
+    filter: drop-shadow(0 2px 4px rgba(0, 30, 20, 0.25));
+  }
+  75% {
+    transform: translateX(0px) rotateZ(0deg) rotateY(270deg);
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.7)) brightness(1.15);
+  }
+  100% {
+    transform: translateX(-24px) rotateZ(-16deg) rotateY(360deg);
+    filter: drop-shadow(0 2px 4px rgba(0, 30, 20, 0.25));
   }
 }
 

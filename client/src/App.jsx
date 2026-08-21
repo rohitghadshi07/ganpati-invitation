@@ -186,7 +186,7 @@ function App() {
               <span className="card-corner card-corner-tl">❋</span>
               <span className="card-corner card-corner-tr">❋</span>
               <div className="invitation-feather-badge">
-                <PeacockFeather size={65} idPrefix="invite-card-feather" />
+                <PeacockFeather size={48} idPrefix="invite-card-feather" />
               </div>
               <h4 className="mantra">|| श्री गणेशाय नमः ||</h4>
               <p className="invitation-greeting">आपणास सहकुटुंब सप्रेम निमंत्रण</p>
