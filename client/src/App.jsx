@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import configData from './config';
 import './index.css';
 
 function App() {
-  const [config, setConfig] = useState(null);
+  const [config] = useState(configData);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [musicPlaying, setMusicPlaying] = useState(false);
@@ -10,15 +11,6 @@ function App() {
   const [curtainOpen, setCurtainOpen] = useState(false);
   const [showCurtainDom, setShowCurtainDom] = useState(true);
   const audioRef = useRef(null);
-
-  useEffect(() => {
-    fetch('http://localhost:5000/api/config')
-      .then(res => res.json())
-      .then(data => {
-        setConfig(data);
-      })
-      .catch(err => console.error(err));
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
