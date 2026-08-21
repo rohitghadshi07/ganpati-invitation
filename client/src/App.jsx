@@ -92,7 +92,7 @@ function App() {
     const shareText = `गणपती बाप्पा मोरया! 🙏 You are cordially invited to celebrate Makhanchor Ganpati with us.`;
     if (navigator.share) {
       navigator.share({
-        title: 'Ganpati Bappa Morya! 🙏',
+        title: 'गणपती बाप्पा मोरया! 🙏',
         text: shareText,
         url: window.location.href,
       }).catch(console.error);
@@ -125,15 +125,15 @@ function App() {
 
       <header className={`nav-wrap ${scrolled ? 'nav-scrolled' : ''}`} id="navbar" role="banner">
         <nav className="nav container" aria-label="Main navigation">
-          <a className="brand" href="#home" onClick={(e) => { e.preventDefault(); scrollTo('home'); }}>🙏 Ganpati Bappa Morya!</a>
+          <a className="brand" href="#home" onClick={(e) => { e.preventDefault(); scrollTo('home'); }}>🙏 गणपती बाप्पा मोरया!</a>
           <button id="nav-toggle" className="nav-toggle" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
             <i className="fa-solid fa-bars"></i>
           </button>
           <ul id="nav-menu" className={`nav-menu ${menuOpen ? 'show' : ''}`}>
             <li><a href="#home" onClick={(e) => { e.preventDefault(); scrollTo('home'); }}>Home</a></li>
             <li><a href="#invitation" onClick={(e) => { e.preventDefault(); scrollTo('invitation'); }}>Invitation</a></li>
-            <li><a href="#schedule" onClick={(e) => { e.preventDefault(); scrollTo('schedule'); }}>कार्यक्रम</a></li>
-            <li><a href="#gallery" onClick={(e) => { e.preventDefault(); scrollTo('gallery'); }}>Gallery</a></li>
+            <li><a href="#schedule" onClick={(e) => { e.preventDefault(); scrollTo('schedule'); }}>Schedule</a></li>
+            <li><a href="#family" onClick={(e) => { e.preventDefault(); scrollTo('family'); }}>Family</a></li>
             <li><a href="#venue" onClick={(e) => { e.preventDefault(); scrollTo('venue'); }}>Venue</a></li>
             <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>Contact</a></li>
           </ul>
@@ -167,8 +167,8 @@ function App() {
               <img className="hero-image" src={bappaImg} alt="Ganpati Bappa" loading="lazy" />
             </div>
             <div className="hero-intro reveal">
-              <h1 className="hero-title">Ganpati Bappa Morya!</h1>
-              <h2 className="hero-subtitle">Makhanchor Ganpati</h2>
+              <h1 className="hero-title">गणपती बाप्पा मोरया!</h1>
+              <h2 className="hero-subtitle">माखणचोर गणपती</h2>
               <p className="hero-desc">With immense joy and devotion, we invite you to seek the blessings of Lord Ganesha and celebrate the divine presence of Bappa with us.</p>
               
               <div className="countdown-section">
@@ -201,9 +201,13 @@ function App() {
               <p className="invitation-greeting">आपणास सहकुटुंब सप्रेम निमंत्रण</p>
               <h3 className="invitation-heading">You are cordially invited to celebrate<br/>Makhanchor Ganpati with us.</h3>
               <div className="host-details">
-                <p><i className="fa-solid fa-user"></i> <strong>{config.hostName}</strong></p>
+                <p><i className="fa-solid fa-user-group"></i> <strong>{config.hostName}</strong></p>
                 <p><i className="fa-solid fa-location-dot"></i> {config.venue}</p>
-                <p><i className="fa-solid fa-phone"></i> <a href={`tel:${config.phoneDigits}`}>{config.phone}</a></p>
+                <p>
+                  <i className="fa-solid fa-phone"></i> 
+                  <a href="tel:919833321453">Rohit: +91 9833321453</a> &nbsp;|&nbsp; 
+                  <a href="tel:919833344444">Rahul: +91 9833344444</a>
+                </p>
               </div>
               <span className="card-corner card-corner-bl">❋</span>
               <span className="card-corner card-corner-br">❋</span>
@@ -306,18 +310,27 @@ function App() {
           <div className="container">
             <h2 className="section-title reveal">संपर्क</h2>
             <p className="section-subtitle reveal">Get in Touch</p>
-            <div className="contact-card reveal">
-              <div className="contact-icon"><i className="fa-solid fa-phone-volume"></i></div>
-              <h3>{config.hostName}</h3>
-              <p><a href={`tel:${config.phoneDigits}`}>{config.phone}</a></p>
-              <div className="contact-actions">
-                <a className="btn btn-whatsapp" href={`https://wa.me/${config.phoneDigits}?text=${encodeURIComponent('गणपती बाप्पा मोरया! 🙏 I would love to visit for darshan.')}`} target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-whatsapp"></i> Message on WhatsApp
-                </a>
-                <button className="btn btn-outline share-btn" onClick={shareInvitation}>
-                  <i className="fa-solid fa-share-nodes"></i> Share Invitation
-                </button>
-              </div>
+            <div className="contact-grid" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap', maxWidth: '850px', margin: '0 auto' }}>
+              {config.hosts.map((host, idx) => (
+                <div key={idx} className="contact-card reveal" style={{ flex: '1 1 300px', maxWidth: '380px' }}>
+                  <div className="contact-icon"><i className="fa-solid fa-phone-volume"></i></div>
+                  <h3>{host.name}</h3>
+                  <p><a href={`tel:${host.phoneDigits}`}>{host.phone}</a></p>
+                  <div className="contact-actions">
+                    <a className="btn btn-whatsapp" href={`https://wa.me/${host.phoneDigits}?text=${encodeURIComponent('गणपती बाप्पा मोरया! 🙏 I would love to visit for darshan.')}`} target="_blank" rel="noopener noreferrer">
+                      <i className="fa-brands fa-whatsapp"></i> Message on WhatsApp
+                    </a>
+                    <a className="btn btn-primary" href={`tel:${host.phoneDigits}`}>
+                      <i className="fa-solid fa-phone"></i> Call {host.name.split(' ')[0]}
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div style={{ textAlign: 'center', marginTop: '1.8rem' }}>
+              <button className="btn btn-outline share-btn" onClick={shareInvitation}>
+                <i className="fa-solid fa-share-nodes"></i> Share Invitation
+              </button>
             </div>
           </div>
         </section>
@@ -327,12 +340,16 @@ function App() {
         <div className="container footer-inner">
           <div className="closing">
             <p className="footer-shloka">|| गणपती बाप्पा मोरया ||</p>
-            <h3 className="footer-blessing">🙏 Ganpati Bappa Morya!</h3>
+            <h3 className="footer-blessing">🙏 गणपती बाप्पा मोरया!</h3>
             <p className="footer-host">With love, {config.hostName} &amp; Family</p>
           </div>
-          <div className="footer-contact">
-            <p><a href={`tel:${config.phoneDigits}`}>{config.phone}</a></p>
-            <p><a className="btn-whatsapp-sm" href={`https://wa.me/${config.phoneDigits}`} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-whatsapp"></i> WhatsApp</a></p>
+          <div className="footer-contact" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap', margin: '1rem 0' }}>
+            {config.hosts.map((host, idx) => (
+              <div key={idx} style={{ textAlign: 'center' }}>
+                <p><a href={`tel:${host.phoneDigits}`}><strong>{host.name}</strong>: {host.phone}</a></p>
+                <p style={{ marginTop: '0.3rem' }}><a className="btn-whatsapp-sm" href={`https://wa.me/${host.phoneDigits}`} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-whatsapp"></i> WhatsApp</a></p>
+              </div>
+            ))}
           </div>
           <p className="footer-credits">Made with ❤️ &amp; devotion</p>
         </div>
