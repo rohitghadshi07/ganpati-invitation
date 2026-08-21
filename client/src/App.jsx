@@ -252,7 +252,9 @@ function App() {
 
         <div className="section-divider"></div>
 
-        <section id="gallery" className="gallery-section">
+    
+      
+        {/* <section id="gallery" className="gallery-section">
           <div className="container">
             <h2 className="section-title reveal">बाप्पा दर्शन</h2>
             <p className="section-subtitle reveal">Photo Gallery</p>
@@ -265,7 +267,8 @@ function App() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
+
 
         <div className="section-divider"></div>
 
