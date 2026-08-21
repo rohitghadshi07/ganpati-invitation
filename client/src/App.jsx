@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import configData from './config';
 import { PeacockFeather } from './components/PeacockFeather';
 import { PeacockFeathersBackground } from './components/PeacockFeathersBackground';
+import bappaImg from './assets/bappa.jpeg';
 import './index.css';
 
 function App() {
@@ -163,7 +164,7 @@ function App() {
           <div className="container hero-content">
             <div className="hero-image-wrapper reveal">
               <div className="hero-backdrop"></div>
-              <img className="hero-image" src="/assets/images/ganpati/ganpati-placeholder.png" alt="Ganpati Bappa" loading="lazy" />
+              <img className="hero-image" src={bappaImg} alt="Ganpati Bappa" loading="lazy" />
             </div>
             <div className="hero-intro reveal">
               <h1 className="hero-title">Ganpati Bappa Morya!</h1>
