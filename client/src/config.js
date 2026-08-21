@@ -14,7 +14,7 @@ export const configData = {
     {
       title: 'गणपती स्थापना',
       title_en: 'Ganpati Sthapana',
-      date: '26 August 2026',
+      date: '14 September 2026',
       time: 'सकाळी 11:00 वाजता',
       icon: 'fa-om',
       desc: 'श्री गणेश मूर्तीची प्राणप्रतिष्ठा',
@@ -38,13 +38,13 @@ export const configData = {
     {
       title: 'गणपती विसर्जन',
       title_en: 'Ganpati Visarjan',
-      date: '5 September 2026',
+      date: '25 September 2026',
       time: 'दुपारी 4:00 वाजता',
       icon: 'fa-water',
       desc: 'गणपती बाप्पा मोरया, पुढच्या वर्षी लवकर या!',
     },
   ],
-  countdownDate: '2026-08-26T11:00:00+05:30'
+  countdownDate: '2026-09-14T00:00:00+05:30'
 };
 
 export default configData;

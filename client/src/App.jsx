@@ -36,13 +36,13 @@ function App() {
     if (!config) return;
     const targetDate = new Date(config.countdownDate).getTime();
     
-    const interval = setInterval(() => {
+    const updateCountdown = () => {
       const now = new Date().getTime();
       const diff = targetDate - now;
 
       if (diff <= 0) {
-        clearInterval(interval);
-        return;
+        setTimeLeft({ days: '00', hours: '00', mins: '00', secs: '00' });
+        return false;
       }
       
       setTimeLeft({
@@ -51,6 +51,14 @@ function App() {
         mins: String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0'),
         secs: String(Math.floor((diff % 60000) / 1000)).padStart(2, '0')
       });
+      return true;
+    };
+
+    updateCountdown();
+    const interval = setInterval(() => {
+      if (!updateCountdown()) {
+        clearInterval(interval);
+      }
     }, 1000);
     
     return () => clearInterval(interval);
